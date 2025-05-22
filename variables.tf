@@ -24,7 +24,7 @@ variable "project" {
     scene_width  = optional(number, null)
     show_grid    = optional(bool, null)
     auto_close   = optional(bool, null)
-    auto_open    = optional(bool, null)
+    auto_open    = optional(bool, true)
     snap_to_grid = optional(bool, null)
     zoom         = optional(number, null)
   })
