@@ -38,7 +38,6 @@ variable "template_nodes" {
     properties = optional(map(any), {})
     started = optional(bool, true)
     role = optional(string, "")
-    os = optional(string, "")
   }))
   default = []
 }
