@@ -18,7 +18,7 @@ variable "password" {
 }
 
 variable "project" {
-  type = map(object({
+  type = map({
     name        = string
     scene_height = optional(number, null)
     scene_width  = optional(number, null)
@@ -27,7 +27,7 @@ variable "project" {
     auto_open    = optional(bool, null)
     snap_to_grid = optional(bool, null)
     zoom         = optional(number, null)
-  }))
+  })
 }
 variable "template_nodes" {
   type = list(object({
