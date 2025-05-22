@@ -8,5 +8,5 @@ output "nodes" {
 }
 
 output "links" {
-  value       = module.links
+  value       = { for key, link in module.links : key => link.link }
 }
