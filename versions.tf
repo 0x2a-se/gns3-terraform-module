@@ -8,14 +8,6 @@ terraform {
   
 }
 
-
-
-# Configure the GNS3 provider
-provider "gns3" {
-  host = var.url
-}
-
-
 provider "restapi" {
   uri                  = "${var.url}/v2"
   write_returns_object = true
