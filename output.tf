@@ -4,7 +4,7 @@ output "project" {
 }
 
 output "nodes" {
-  value       = { for node in module.nodes : node.name => node.node }
+  value       = { for key, node in module.nodes : key => node.node }
 }
 
 output "links" {
