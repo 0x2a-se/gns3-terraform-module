@@ -1,6 +1,6 @@
 output "project" {
   description = "The name of the GNS3 project."
-  value       = module.project
+  value       = module.project.data
 }
 
 output "nodes" {
