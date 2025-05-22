@@ -18,7 +18,7 @@ variable "password" {
 }
 
 variable "project" {
-  type = map({
+  type = object({
     name        = string
     scene_height = optional(number, null)
     scene_width  = optional(number, null)
