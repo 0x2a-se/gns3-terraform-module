@@ -41,7 +41,7 @@ module "links" {
   source = "./modules/gns3_link"
   for_each = {
     for link in var.node_links :
-    "${link.node_a_name}-${link.node_b_name}" => link
+    "${link.node_a_name}-${link.node_a_interface}-${link.node_a_name}-${link.node_b_interface}" => link
   }
   project_id       = module.project.id
   node_a = {
