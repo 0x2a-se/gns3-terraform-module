@@ -4,7 +4,7 @@ output "project" {
 }
 
 output "nodes" {
-  value       = { for key, node in module.nodes : key => node.node }
+  value       = { for key, node in module.nodes : key => merge({"module_data" = { for node in var.template_nodes : node.name => node }},node.node) }
 }
 
 output "links" {
