@@ -10,3 +10,13 @@ output "nodes" {
 output "links" {
   value       = { for key, link in module.links : key => link.link }
 }
+output "var_project" {
+  value = var.project
+}
+
+output "var_template_nodes" {
+  value = var.template_nodes
+}
+output "var_node_links" {
+  value = var.node_links
+}
