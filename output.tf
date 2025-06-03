@@ -3,8 +3,12 @@ output "project" {
   value       = module.project.data
 }
 
+locals {
+  nodes = { for node in var.template_nodes : node.name => node }
+}
+
 output "nodes" {
-  value       = { for key, node in module.nodes : key => merge({"module_data" = { for node in var.template_nodes : node.name => node }},node.node) }
+  value       = { for key, node in module.nodes : key => merge({"module_data" = local.nodes[key]},node.node) }
 }
 
 output "links" {
