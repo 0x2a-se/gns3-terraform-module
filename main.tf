@@ -36,9 +36,11 @@ locals {
 }
 
 resource "null_resource" "link_dependencies" {
-  triggers = {
-    a_node_interface = "${each.value.node_a_name}-${each.value.node_a_interface}"
+  for_each = {
+    for link in var.node_links :
+    "${link.node_a_name}-${link.node_a_interface}-${link.node_a_name}-${link.node_b_interface}" => link
   }
+  triggers = each.value
 }
 
 module "links" {
