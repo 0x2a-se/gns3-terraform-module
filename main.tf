@@ -52,6 +52,7 @@ module "links" {
       text = local.node_ports_map["${each.value.node_a_name}-${each.value.node_a_interface}"].short_name
       style = "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;"
     }
+    link_style = each.value.link_style
   }
   node_b = {
     id             = module.nodes[each.value.node_b_name].id

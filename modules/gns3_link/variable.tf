@@ -3,15 +3,15 @@ variable "project_id" {
   type        = string
 }
 
-# variable "link_style" {
-#   description = "The style of the link."
-#   type        = object({
-#     color = optional(string, "")
-#     type  = optional(number, 0)
-#     width = optional(number, 1)
-#   })
-#   default = {}
-# }
+variable "link_style" {
+  description = "The style of the link."
+  type        = object({
+    color = optional(string, "")
+    type  = optional(number, 0)
+    width = optional(number, 1)
+  })
+  default = {}
+}
 
 variable "node_a" {
   description = "The name of the first node."
