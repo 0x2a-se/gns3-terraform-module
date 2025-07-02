@@ -23,8 +23,8 @@ variable "project" {
     scene_height = optional(number, null)
     scene_width  = optional(number, null)
     show_grid    = optional(bool, null)
-    auto_close   = optional(bool, null)
-    auto_open    = optional(bool, null)
+    auto_close   = optional(bool, false)
+    auto_open    = optional(bool, true)
     snap_to_grid = optional(bool, null)
     zoom         = optional(number, null)
   })
@@ -33,8 +33,8 @@ variable "template_nodes" {
   type = list(object({
     name = string
     template_name = string
-    x = number
-    y = number
+    x = optional(number, null)
+    y = optional(number, null)
     properties = optional(map(any), {})
     started = optional(bool, true)
     role = optional(string, "")
