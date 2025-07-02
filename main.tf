@@ -35,7 +35,11 @@ locals {
     ]...) #jsondecode(module.nodes["dc1-leaf111"].node.api_response).ports
 }
 
-
+resource "null_resource" "link_dependencies" {
+  triggers = {
+    a_node_interface = "${each.value.node_a_name}-${each.value.node_a_interface}"
+  }
+}
 
 module "links" {
   source = "./modules/gns3_link"
@@ -63,5 +67,8 @@ module "links" {
       #style = "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;"
     }
   }
+  depends_on = [
+    null_resource.link_dependencies
+  ]
   
 }
