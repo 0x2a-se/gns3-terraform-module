@@ -8,7 +8,7 @@ variable "link_style" {
   type        = object({
     color = optional(string, "#000000")
     type  = optional(number, 1)
-    width = optional(number, 3)
+    width = optional(number, 1)
   })
   default = {}
 }
