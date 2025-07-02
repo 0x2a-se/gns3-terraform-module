@@ -33,8 +33,8 @@ variable "template_nodes" {
   type = list(object({
     name = string
     template_name = string
-    x = optional(number, null)
-    y = optional(number, null)
+    x = optional(number, 0)
+    y = optional(number, 0)
     properties = optional(map(any), {})
     started = optional(bool, true)
     role = optional(string, "")
