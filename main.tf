@@ -68,6 +68,7 @@ module "links" {
       text = local.node_ports_map["${each.value.node_b_name}-${each.value.node_b_interface}"].short_name
       #style = "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;"
     }
+    link_style = each.value.link_style
   }
   depends_on = [
     null_resource.link_dependencies
