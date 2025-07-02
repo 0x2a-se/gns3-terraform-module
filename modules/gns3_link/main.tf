@@ -17,6 +17,7 @@ resource "restapi_object" "gns3_link" {
         label = var.node_b.label
       }
     ]
+    link_style = var.link_style
   })
 
 }
