@@ -40,7 +40,7 @@ resource "null_resource" "link_dependencies" {
     for link in var.node_links :
     "${link.node_a_name}-${link.node_a_interface}-${link.node_a_name}-${link.node_b_interface}" => link
   }
-  triggers = each.value
+  triggers = each.key
 }
 
 module "links" {
