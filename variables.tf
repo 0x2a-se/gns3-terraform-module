@@ -48,7 +48,11 @@ variable "node_links" {
     node_b_name        = string
     node_a_interface = string
     node_b_interface = string
-    link_style = optional(map(any), null)
+    link_style = object({
+        color = optional(string, "#000000")
+        type  = optional(number, 1)
+        width = optional(number, 2)
+      })
   }))
   default = []
 }
