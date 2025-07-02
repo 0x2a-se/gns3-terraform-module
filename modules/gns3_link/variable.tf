@@ -6,7 +6,7 @@ variable "project_id" {
 variable "link_style" {
   description = "The style of the link."
   type        = object({
-    color = optional(string, "")
+    color = optional(string, "#000000")
     type  = optional(number, 0)
     width = optional(number, 1)
   })
