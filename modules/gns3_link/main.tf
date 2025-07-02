@@ -18,7 +18,5 @@ resource "restapi_object" "gns3_link" {
       }
     ]
   })
-  lifecycle {
-    create_before_destroy = false
-  }
+
 }
