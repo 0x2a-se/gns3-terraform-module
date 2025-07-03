@@ -16,7 +16,7 @@ terraform {
 
 
 module "project" {
-  source = "git@github.com:0x2a-se/gns3-terraform-module.git"
+  source = "github.com:0x2a-se/gns3-terraform-module.git"
   url = "http://<ip address>:3080"
   project = {
     name = "module-test"
@@ -26,7 +26,7 @@ module "project" {
   template_nodes = [
     {
       name               = "dc1-leaf111"
-      template_name = "Cisco NX-OSv 9000 64-lite 10.4.4.M"
+      template_name = "<sw qemu template name>"
       x                  = 0
       y                  = 0
       properties = {
@@ -38,7 +38,7 @@ module "project" {
     },
     {
       name               = "dc1-spine101"
-      template_name = "Cisco NX-OSv 9000 64-lite 10.4.4.M"
+      template_name = "<sw qemu template name>"
       x                  = 0
       y                  = 100
       properties = {
