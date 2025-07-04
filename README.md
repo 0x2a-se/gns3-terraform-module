@@ -4,6 +4,20 @@ Terraform module to handle GNS3 projects
 ## Example
 
 ```Terraform
+
+variable "GNS3_URL" {
+  type = string
+}
+
+variable "GNS3_USERNAME" {
+  type = string
+}
+
+variable "GNS3_PASSWORD" {
+  type      = string
+  sensitive = true
+}
+
 terraform {
   required_providers {
     restapi = {
@@ -14,6 +28,18 @@ terraform {
   
 }
 
+provider "restapi" {
+  uri                  = "${var.GNS3_URL}/v2"
+  write_returns_object = true
+  debug                = true
+  username = var.GNS3_USERNAME
+  password = var.GNS3_PASSWORD
+
+
+  create_method  = "POST"
+  update_method  = "PUT"
+  destroy_method = "DELETE"
+}
 
 module "project" {
   source = "github.com:0x2a-se/gns3-terraform-module.git"

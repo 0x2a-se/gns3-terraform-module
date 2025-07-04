@@ -7,16 +7,3 @@ terraform {
   }
   
 }
-
-# provider "restapi" {
-#   uri                  = "${var.url}/v2"
-#   write_returns_object = true
-#   debug                = true
-#   username = var.username
-#   password = var.password
-
-
-#   create_method  = "POST"
-#   update_method  = "PUT"
-#   destroy_method = "DELETE"
-# }
