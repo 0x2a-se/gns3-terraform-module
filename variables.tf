@@ -25,8 +25,14 @@ variable "project" {
     show_grid    = optional(bool, null)
     auto_close   = optional(bool, false)
     auto_open    = optional(bool, true)
+    auto_start   = optional(bool, true)
     snap_to_grid = optional(bool, null)
     zoom         = optional(number, null)
+    grid_size    = optional(number, null)
+    drawing_grid_size         = optional(number, null)
+    show_interface_labels  = optional(bool, false)
+    show_layers  = optional(bool, false)
+    variables = list(any)
   })
 }
 variable "template_nodes" {
