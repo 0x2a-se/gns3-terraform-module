@@ -32,7 +32,7 @@ variable "project" {
     drawing_grid_size     = optional(number, null)
     show_interface_labels = optional(bool, false)
     show_layers           = optional(bool, false)
-    variables             = list(any)
+    variables             = optional(list(any))
   })
 }
 variable "template_nodes" {
