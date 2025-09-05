@@ -5,16 +5,16 @@ resource "restapi_object" "gns3_link" {
   data = jsonencode({
     nodes = [
       {
-        node_id             = var.node_a.id
+        node_id        = var.node_a.id
         adapter_number = var.node_a.adapter_number
         port_number    = var.node_a.port_number
-        label = var.node_a.label
+        label          = var.node_a.label
       },
       {
-        node_id             = var.node_b.id
+        node_id        = var.node_b.id
         adapter_number = var.node_b.adapter_number
         port_number    = var.node_b.port_number
-        label = var.node_b.label
+        label          = var.node_b.label
       }
     ]
     link_style = var.link_style

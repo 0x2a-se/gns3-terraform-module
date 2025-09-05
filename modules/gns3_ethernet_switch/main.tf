@@ -11,7 +11,7 @@ resource "restapi_object" "gns3_ethernet_switch" {
     x          = var.x
     y          = var.y
     properties = {
-      ports_mapping = [for port in range(var.number_of_ports+1) :
+      ports_mapping = [for port in range(var.number_of_ports + 1) :
         {
           name        = "Ethernet${port}"
           port_number = port

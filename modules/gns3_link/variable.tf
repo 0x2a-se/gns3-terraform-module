@@ -5,7 +5,7 @@ variable "project_id" {
 
 variable "link_style" {
   description = "The style of the link."
-  type        = object({
+  type = object({
     color = optional(string, "#000000")
     type  = optional(number, 1)
     width = optional(number, 2)
@@ -15,26 +15,26 @@ variable "link_style" {
 
 variable "node_a" {
   description = "The name of the first node."
-  type        = object({
-    id                = string
-    adapter_number    = number
-    port_number       = number
-    label             = optional(object({
+  type = object({
+    id             = string
+    adapter_number = number
+    port_number    = number
+    label = optional(object({
       style = optional(string, "")
-      text = optional(string, "")
+      text  = optional(string, "")
     }), {})
   })
 }
 
 variable "node_b" {
   description = "The name of the second node."
-  type        = object({
-    id                = string
-    adapter_number    = number
-    port_number       = number
-    label             = optional(object({
+  type = object({
+    id             = string
+    adapter_number = number
+    port_number    = number
+    label = optional(object({
       style = optional(string, "")
-      text = optional(string, "")
+      text  = optional(string, "")
     }), {})
   })
 }
@@ -42,7 +42,7 @@ variable "node_b" {
 variable "filters" {
   description = "The filters for the link."
   type        = map(any)
-  default = {}
+  default     = {}
 }
 
 variable "suspend" {

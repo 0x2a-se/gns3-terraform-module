@@ -4,11 +4,11 @@ output "project" {
 }
 
 output "nodes" {
-  value       = { for key, node in module.nodes : key => node.node }
+  value = { for key, node in module.nodes : key => node.node }
 }
 
 output "links" {
-  value       = { for key, link in module.links : key => link.link }
+  value = { for key, link in module.links : key => link.link }
 }
 output "var_project" {
   value = var.project
